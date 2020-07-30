@@ -5,12 +5,16 @@ import { Feather } from "@expo/vector-icons";
 type SearchBarProps = {
   term: string;
   onTermChange: (newTerm: string) => void;
-  onTermSubmit: () => void;
+  onTermSubmit: (term: string) => void;
 };
 
 const SearchScreen = ({ onTermChange, term, onTermSubmit }: SearchBarProps) => {
   const handleOnChangeText = (newTerm: string): void => {
     onTermChange(newTerm);
+  };
+
+  const handleOnTermSubmit = () => {
+    onTermSubmit(term);
   };
 
   return (
@@ -23,7 +27,7 @@ const SearchScreen = ({ onTermChange, term, onTermSubmit }: SearchBarProps) => {
         onChangeText={handleOnChangeText}
         autoCapitalize="none"
         autoCorrect={false}
-        onEndEditing={onTermSubmit}
+        onEndEditing={handleOnTermSubmit}
       />
     </View>
   );
