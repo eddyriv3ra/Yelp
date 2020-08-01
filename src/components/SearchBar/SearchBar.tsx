@@ -1,6 +1,7 @@
-import React from "react";
-import { View, TextInput, StyleSheet } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import React, { ReactElement } from "react";
+import { View, TextInput } from "react-native";
+import { Icon } from "expo";
+import styles from "./SearchBarStyles";
 
 type SearchBarProps = {
   term: string;
@@ -8,7 +9,11 @@ type SearchBarProps = {
   onTermSubmit: (term: string) => void;
 };
 
-const SearchScreen = ({ onTermChange, term, onTermSubmit }: SearchBarProps) => {
+const SearchScreen = ({
+  onTermChange,
+  term,
+  onTermSubmit,
+}: SearchBarProps): ReactElement => {
   const handleOnChangeText = (newTerm: string): void => {
     onTermChange(newTerm);
   };
@@ -19,7 +24,7 @@ const SearchScreen = ({ onTermChange, term, onTermSubmit }: SearchBarProps) => {
 
   return (
     <View style={styles.backgroundStyle}>
-      <Feather name="search" style={styles.iconStyle} />
+      <Icon.Feather name="search" style={styles.iconStyle} />
       <TextInput
         style={styles.inoutStyle}
         placeholder="Search"
@@ -32,25 +37,5 @@ const SearchScreen = ({ onTermChange, term, onTermSubmit }: SearchBarProps) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  backgroundStyle: {
-    marginTop: 10,
-    backgroundColor: "#F0EEEE",
-    height: 50,
-    borderRadius: 5,
-    marginHorizontal: 15,
-    flexDirection: "row",
-  },
-  inoutStyle: {
-    flexGrow: 1,
-    fontSize: 18,
-  },
-  iconStyle: {
-    fontSize: 35,
-    alignSelf: "center",
-    marginHorizontal: 15,
-  },
-});
 
 export default SearchScreen;

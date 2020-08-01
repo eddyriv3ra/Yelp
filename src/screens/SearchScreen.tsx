@@ -7,9 +7,9 @@ import useSearch from "../hooks/useSearch";
 const SearchScreen: FunctionComponent = () => {
   const [term, setTerm] = useState("");
   const [searchValue, setSearchValue] = useState("pasta");
-  const data = useSearch(searchValue);
-  console.log(data);
-  // console.log("isError", isError);
+  const { businesses } = useSearch(searchValue);
+  console.log(businesses);
+  // console.log("isError", isError);ñ¡
 
   const onTermSubmit = (searchTerm: string) => {
     setSearchValue(searchTerm);
