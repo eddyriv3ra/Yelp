@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import SearchBar from '../components/SearchBar';
-import ResultsList from '../components/ResultsList';
-import useSearch from '../hooks/useSearch';
+import React, { useState, FunctionComponent } from "react";
+import { View, Text, StyleSheet } from "react-native";
+import SearchBar from "../components/SearchBar";
+import ResultsList from "../components/ResultsList";
+import useSearch from "../hooks/useSearch";
 
-const SearchScreen = () => {
-  const [term, setTerm] = useState('');
-  const [searchValue, setSearchValue] = useState('pasta');
+const SearchScreen: FunctionComponent = () => {
+  const [term, setTerm] = useState("");
+  const [searchValue, setSearchValue] = useState("pasta");
   const data = useSearch(searchValue);
   console.log(data);
   // console.log("isError", isError);
 
-  const onTermSubmit = (term: string) => {
-    setSearchValue(term);
+  const onTermSubmit = (searchTerm: string) => {
+    setSearchValue(searchTerm);
   };
 
   return (
@@ -23,9 +23,9 @@ const SearchScreen = () => {
         onTermSubmit={onTermSubmit}
       />
       <Text>Search Screen</Text>
-      <ResultsList title={'lele'} />
-      <ResultsList title={'lala'} />
-      <ResultsList title={'lolo'} />
+      <ResultsList title="lele" />
+      <ResultsList title="lala" />
+      <ResultsList title="lolo" />
     </View>
   );
 };
