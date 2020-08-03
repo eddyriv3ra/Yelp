@@ -31,6 +31,8 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "camelcase": ["error", { "allow": ["image_url", "review_count"] }],
+    "react/jsx-one-expression-per-line": "off"
   }
 }

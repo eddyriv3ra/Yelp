@@ -13,7 +13,7 @@ const useSearch = (searchValue: string): useSearchResult => {
     ["business", { searchValue, limit: 50, location: "san+jose" }],
     getBusinesses,
   );
-  return data;
+  return data || {};
 };
 
 export default useSearch;

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { View, TextInput } from "react-native";
-import { Icon } from "expo";
+import { Feather } from "@expo/vector-icons";
 import styles from "./SearchBarStyles";
 
 type SearchBarProps = {
@@ -24,7 +24,7 @@ const SearchScreen = ({
 
   return (
     <View style={styles.backgroundStyle}>
-      <Icon.Feather name="search" style={styles.iconStyle} />
+      <Feather name="search" style={styles.iconStyle} />
       <TextInput
         style={styles.inoutStyle}
         placeholder="Search"
